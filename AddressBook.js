@@ -238,6 +238,22 @@ if (CountDuplicate == 1)
   console.log( "--It is Not a Duplicate Entry--" );
 else
   console.log( "--It is Duplicate Entry--" );
+
+//Ability to search person in particular City or State
+
+  //Search By City
+  console.log("\n------------ Search To get Contact by City Nagpur---------------------");
+  function ContactByCity(contact_book) 
+  {
+    if (contact_book.city == "Nagpur") console.log(contact_book.toString());
+  }
+  ContactsArray.filter(ContactByCity);
+
+  //Search By State
+  console.log( "----------------Search Contact By State Maharashtra----------------");
+  let statecontact = ContactsArray.filter((contact_book) => contact_book.state.includes("Mharashtra")
+  );
+  console.log(statecontact.toString());
 } catch (e) 
 {
   console.log(e);
