@@ -213,7 +213,17 @@ class AddressBook
   ContactsArray.splice(check, 1);
   console.log("----------------------Contacts after Being Deleted from the array---------------------------------");
   ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
-  } catch (e) 
-  {
-    console.log(e);
-  }
+  
+  //UC6 Reduce function to find total of contacts in Address Book
+var ContactsPresenceTotal = 0;
+function findTotalContacts(ContactsArray) 
+{
+  if (ContactsArray != null) ContactsPresenceTotal++;
+  return ContactsPresenceTotal;
+}
+ContactsArray.reduce(findTotalContacts, 1);
+console.log("--Total Contacts Present in the AddressBookMaster array--: " +ContactsPresenceTotal);
+} catch (e) 
+{
+  console.log(e);
+}
