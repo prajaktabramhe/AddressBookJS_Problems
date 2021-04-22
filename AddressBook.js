@@ -187,20 +187,29 @@ class AddressBook
       (
         new AddressBook
         (
-          "Shubham",
-          "Kumar",
-          "beachroad",
-          "Vizag",
-          "MadhyPradesh",
-          "628 412",
-          "91 7878787878",
-          "john@gmail.com"
+          "Shreya",
+          "Malviya",
+          "fourstreet",
+          "Delhi",
+          "NewDelhi",
+          "891 258",
+          "87 8928397476",
+          "shreyamalviya@gmail.com"
         )
       );
-      ContactsArray.forEach((contact_book) =>
-        console.log(contact_book.toString())
-      );
-    } catch (e) 
-    {
-      console.log(e);
-    }
+      //printing array before updating
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+
+  //finding index using name
+  let check = ContactsArray.findIndex(
+    (contact_book) => contact_book.firstName == "Prajakta"
+  );
+  //updating the contact detail
+  ContactsArray[check].zip = "121 333";
+
+  //displaying contacts after being updated
+  console.log("----------------------After Changing Zip Updated Contacts are------------------------------------");
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+} catch (e) {
+  console.log(e);
+}
