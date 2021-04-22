@@ -201,15 +201,19 @@ class AddressBook
   ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
 
   //finding index using name
-  let check = ContactsArray.findIndex(
-    (contact_book) => contact_book.firstName == "Prajakta"
-  );
+  let check = ContactsArray.findIndex((contact_book) => contact_book.firstName == "Prajakta");
   //updating the contact detail
   ContactsArray[check].zip = "121 333";
 
   //displaying contacts after being updated
   console.log("----------------------After Changing Zip Updated Contacts are------------------------------------");
   ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
-} catch (e) {
-  console.log(e);
-}
+
+  //UC5 Removing an element from an array at an  index
+  ContactsArray.splice(check, 1);
+  console.log("----------------------Contacts after Being Deleted from the array---------------------------------");
+  ContactsArray.forEach((contact_book) => console.log(contact_book.toString()));
+  } catch (e) 
+  {
+    console.log(e);
+  }
