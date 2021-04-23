@@ -256,15 +256,22 @@ else
   console.log(statecontact.toString());
 
   
-// UC9 - Ability to View Person by City or State
-function StateMap(Details)
+ // UC9 - Ability to View Person by City or State
+ function CityMap(Details) 
+ {
+  return Details.state + "       " + Details.firstName + "        " + Details.lastName;
+}
+let addresscityMap = ContactsArray.map(CityMap);
+console.log(addresscityMap);
+
+//by city
+function StateMap(Details) 
 {
-  return Details.state + "    " + Details.firstName + "      " + Details.lastName;
+  return Details.state + "     " + Details.firstName + "     " + Details.lastName;
 }
 let addressStateMap = ContactsArray.map(StateMap);
 console.log(addressStateMap);
 }
-
 catch (e) 
 {
 console.log(e);
