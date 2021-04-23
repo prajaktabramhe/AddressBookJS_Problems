@@ -272,16 +272,50 @@ function StateMap(Details)
 let addressStateMap = ContactsArray.map(StateMap);
 console.log(addressStateMap);
 
-//uc11 To Sort the Enteries in the address book alphabetically by persons name
 
-console.log("-------------Sorting by FirstName-----------");
-for (let contactDetails in ContactsArray)
+//uc11 sorting by name and printing the array
+function SortByName() 
 {
-  ContactsArray.sort(contactDetails.firstName);
+  for (let Details in ContactsArray) 
+  {
+    ContactsArray.sort(Details.firstName);
+  }
+  ContactsArray.forEach((contact) => console.log(contact.toString()));
 }
-ContactsArray.forEach((contact) => console.log(contact.toString()));
+function SortByCity() 
+{
+  for (let Details in ContactsArray) 
+  {
+    ContactsArray.sort(Details.city);
+  }
+  ContactsArray.forEach((contact) => console.log(contact.toString()));
+}
+function SortByState() 
+{
+  for (let Details in ContactsArray) 
+  {
+    ContactsArray.sort(Details.state);
+  }
+  ContactsArray.forEach((contact) => console.log(contact.toString()));
+}
+function SortByZip() 
+{
+  for (let Details in ContactsArray) 
+  {
+    ContactsArray.sort(Details.zip);
+  }
+  ContactsArray.forEach((contact) => console.log(contact.toString()));
+}
+console.log("Sorting by firstName");
+SortByName();
+console.log("Sort By City")
+SortByCity();
+console.log("Sort By State")
+SortByState();
+console.log("Sort By Zip")
+SortByZip();
 }
 catch (e) 
 {
-  console.log(e);
+console.log(e);
 }
